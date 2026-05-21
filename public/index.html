@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Accueil - Forum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-row">
+        <div class="brand-logo">
+          <span>PROJET</span> FORUM
+        </div>
+        <button id="theme-toggle" title="Changer de thème">🌙</button>
+        <div class="top-links">
+          <a href="post.html">Posts</a>
+          <a href="inscription.html" id="nav-inscription">Inscription</a>
+          <a href="connexion.html" id="nav-connexion">Connexion</a>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="search-box">
+          <input id="search-input" type="search" placeholder="Rechercher par nom">
+        </div>
+        <div class="user-actions">
+          <button class="btn accent" onclick="goToPost()">+ Nouveau post</button>
+          <button class="btn outline" id="nav-logout" onclick="logout()">Déconnexion</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-grid">
+      <aside class="sidebar">
+        <div class="panel">
+          <h3>Accueil</h3>
+          <ul class="sidebar-menu">
+            <li class="active">Accueil</li>
+            <li>Populaires</li>
+            <li>Actualités</li>
+            <li>Explorer</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Ressources</h3>
+          <ul class="sidebar-menu lighter">
+            <li>À propos </li>
+            <li>Publicités</li>
+            <li>Plateforme de développement</li>
+            <li>PROJET FORUM</li>
+            <li>Aide</li>
+            <li>Blog</li>
+            <li>Carrières</li>
+            <li>Presse</li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="feed">
+        <section class="hero-card">
+          <div>
+            <p class="eyebrow">BIENVENUE SUR LE FORUM</p>
+            <h1 id="welcomeMessage">Bienvenue sur notre forum 💜</h1>
+            <p class="hero-text">Partage tes idées, découvre des communautés et échange avec d'autres membres.</p>
+          </div>
+          <button class="btn accent" onclick="goToPost()">Créer un post</button>
+        </section>
+
+        <section class="posts-section">
+          <div class="section-header">
+            <h2>Posts récents</h2>
+          </div>
+          <div class="post-filter-row">
+            <div class="post-filter-bar" id="post-filter-bar">
+              <button class="filter-btn active" data-filter="all">Tous</button>
+              <button class="filter-btn" data-filter="created">Publications créées</button>
+              <button class="filter-btn" data-filter="liked">Publications aimées</button>
+            </div>
+            <select id="category-filter" class="category-filter">
+              <option value="all">Toutes catégories</option>
+              <option value="1">Technologie</option>
+              <option value="2">Études</option>
+              <option value="3">Vacances</option>
+              <option value="4">Musique</option>
+              <option value="5">Danse</option>
+              <option value="6">Voyage</option>
+            </select>
+          </div>
+          <div id="posts"></div>
+        </section>
+      </main>
+
+      <!---
+      <aside class="rightbar">
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Communautés populaires</h3>
+            <a href="#">Voir plus</a>
+          </div>
+          <ul class="community-list">
+            <li><span class="community-bullet community-g">G</span><div><strong>Général</strong><small>4,8M membres</small></div><button>Rejoindre</button></li>
+            <li><span class="community-bullet community-t">T</span><div><strong>Technologie</strong><small>3,2M membres</small></div><button>Rejoindre</button></li>
+            <li><span class="community-bullet community-j">J</span><div><strong>Jeux</strong><small>1,5M membres</small></div><button>Rejoindre</button></li>
+            <li><span class="community-bullet community-s">S</span><div><strong>Sport</strong><small>980k membres</small></div><button>Rejoindre</button></li>
+            <li><span class="community-bullet community-m">M</span><div><strong>Musique</strong><small>670k membres</small></div><button>Rejoindre</button></li>
+          </ul>
+        </div>
+
+      -->
+      
+        <div class="panel rules-panel">
+          <h3>Règles du forum</h3>
+          <ol>
+            <li>Soyez respectueux et courtois.</li>
+            <br>
+            <li>Pas de spam ni d'auto-promotion.</li>
+             <br>
+            <li>Restez dans le sujet de chaque communauté.</li>
+             <br>
+            <li>Pas de contenu offensant ou illégal.</li>
+             <br>
+            <li>* Traitez les autres membres avec respect, politesse et bienveillance.</li>
+             <br>
+
+            <li>Évitez les insultes, les attaques personnelles, le dénigrement et l'agressivité.</li> 
+             <br>
+            <li>Ne partagez pas de liens vers vos sites ou projets dans le seul but de faire de la publicité.</li>
+             <br>
+            <li>Évitez de poster plusieurs messages d'affilée ou des messages répétitifs sans intérêt.</li>
+             <br>
+            <li>Respectez les règles de chaque communauté.</li>
+             <br>
+            <li>Publiez vos messages dans la bonne catégorie pour garder le forum bien organisé.</li>
+             <br>
+            <li>Utilisez des titres clairs, précis et explicites pour vos discussions.</li>
+             <br>
+            <li>Ne détournez pas le sujet d'un autre membre, créez une nouvelle discussion si besoin.</li>
+             <br>
+            <li>Aucun propos haineux, raciste, sexiste, homophobe ou violent ne sera toléré.</li>
+             <br>
+            <li>Ne partagez pas de contenus illégaux ni de liens de piratage.</li>
+             <br>
+            <li>Ne publiez jamais d'informations personnelles privées, les vôtres ou celles d'autrui.</li>
+             <br>
+            <li>La modération se réserve le droit de modifier ou supprimer les messages non conformes.</li>
+             <br>
+            <li>Le non-respect des règles peut mener à un avertissement ou à un bannissement.</li>
+             <br>
+            <li>Utilisez le bouton de signalement si vous remarquez un comportement inapproprié.</li>   
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

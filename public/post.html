@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Créer un post</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="auth-layout">
+  <nav class="auth-nav">
+    <a href="index.html">Accueil</a>
+    <a href="" class="active">Créer un post</a>
+    <a href="connexion.html">Connexion</a>
+  </nav>
+
+  <div class="premium-card" style="max-width: 500px;">
+    <h2>Créer un post <span>💜</span></h2>
+    
+    <div class="premium-form">
+      <input type="text" id="title" class="premium-input" placeholder="Titre de votre post">
+      
+      <select id="category" class="premium-select">
+        <option value="" disabled selected>Choisir une catégorie...</option>
+        <option value="1">Technologie</option>
+        <option value="2">Études</option>
+        <option value="3">Vacances</option>
+        <option value="4">Musique</option>
+        <option value="5">Danse</option>
+        <option value="6">Voyage</option>
+      </select>
+      
+      <textarea id="content" class="premium-input premium-textarea" placeholder="Votre message..."></textarea>
+      
+      <div class="premium-file-upload">
+        <label for="post-image-file" class="premium-file-label">📸 Ajouter une image...</label>
+        <input type="file" id="post-image-file" accept="image/*" class="premium-file-input" onchange="document.getElementById('file-name-preview').innerText = this.files[0] ? this.files[0].name : ''">
+        <span id="file-name-preview" class="file-name-preview"></span>
+      </div>
+      
+      <button onclick="createPost()" class="premium-btn">Publier le post</button>
+    </div>
+    
+    <div class="auth-links">
+      <a href="index.html" class="auth-link">← Retour à l'accueil</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
